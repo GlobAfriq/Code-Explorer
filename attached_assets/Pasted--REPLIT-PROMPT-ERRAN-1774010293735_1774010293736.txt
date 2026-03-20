@@ -1,0 +1,583 @@
+════════════════════════════════════════════════════════════════════════════
+  REPLIT PROMPT — ERRANDSPRO NGONG ONE-PAGE WEBSITE
+  Paste this entire prompt into Replit AI Agent to build the site
+════════════════════════════════════════════════════════════════════════════
+
+Build a complete, production-quality one-page website for "ErrandsPro Ngong"
+— a professional concierge and errand service operating in the Ngong,
+Kiserian, Kisamis, Kimuka, Matassia, and Kibiko areas of Kenya.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+TECH STACK
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+- Pure HTML5, CSS3, and vanilla JavaScript (no frameworks required)
+- Google Fonts via CDN: "Playfair Display" (headings) + "DM Sans" (body)
+- AOS.js (Animate On Scroll) via CDN for scroll animations
+- Font Awesome 6 via CDN for icons
+- No backend required — this is a static one-page site
+- Must be fully mobile responsive (mobile-first)
+- All assets are inline or CDN-linked — no local file dependencies
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+BRAND IDENTITY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Business Name:   ErrandsPro Ngong
+Tagline:         "Your time is valuable. We handle the rest."
+Sub-tagline:     "We shop, deliver, source and handle your personal,
+                  home and document errands — so you don't have to."
+CTA phrase:      "One Call. Consider It Done."
+WhatsApp CTA:    "WhatsApp Us Now"
+
+COLOR PALETTE (use these exact hex values throughout):
+  Primary Navy:        #0B1D35   (main background, text on light)
+  Gold Accent:         #C49E53   (highlights, borders, CTAs)
+  Gold Dark:           #A07C35   (hover states on gold elements)
+  Deep Blue:           #1A3A5C   (section backgrounds, card headers)
+  Sky Blue:            #2E86AB   (links, accent text)
+  Off-White:           #F7F5F0   (light section backgrounds)
+  Pure White:          #FFFFFF   (cards, text on dark)
+  Muted Text:          #6B7280   (subtitles, descriptions)
+  Light Gray:          #F4F4F4   (alternating section background)
+
+TYPOGRAPHY:
+  Headings:       Playfair Display — bold, elegant, serif
+  Body/UI text:   DM Sans — clean, modern, readable
+  Hero H1:        64px desktop / 36px mobile
+  Section H2:     42px desktop / 28px mobile
+  Card H3:        20px
+  Body text:      16px, line-height 1.75
+  All section heading letters in sentence case (not all caps)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+DESIGN AESTHETIC
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Tone: Premium, trustworthy, warm — like a luxury hotel concierge,
+but rooted in Nairobi's local community energy.
+
+Visual Language:
+- Dark navy hero section with gold decorative elements
+- Thin gold corner-bracket accent shapes (CSS-drawn, no images)
+- Subtle grid-line texture on dark sections using CSS
+- Cards with thin gold left-border accents on hover
+- Smooth AOS scroll reveal animations on all sections
+- Sticky navbar that transitions from transparent to solid navy on scroll
+- Floating WhatsApp button (fixed, bottom-right) — always visible
+- Gold horizontal divider lines between sections
+- Generous whitespace and padding throughout
+- No stock photo placeholders — use CSS gradient/pattern backgrounds
+  and SVG icon illustrations instead
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PAGE SECTIONS — BUILD EXACTLY IN THIS ORDER
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+── 1. NAVIGATION BAR ──────────────────────────────────────────────────────
+
+  Layout: Fixed/sticky. Full width. Transparent on load, transitions to
+  solid #0B1D35 with a subtle box-shadow on scroll.
+
+  Left:   "ErrandsPro" in Playfair Display gold, bold. "Ngong" in white.
+          A thin gold dot (·) separating them.
+
+  Right:  Nav links: Services | How It Works | Pricing | Areas | Contact
+          All links are white, 14px DM Sans. On hover: gold underline
+          slides in from left using CSS transition.
+          A gold CTA button: "WhatsApp Us" that opens wa.me link.
+
+  Mobile: Hamburger menu icon (Font Awesome fa-bars) in gold.
+          Clicking opens a full-height slide-in menu from the right.
+          Menu background: #0B1D35. Links stacked vertically, large.
+
+── 2. HERO SECTION ────────────────────────────────────────────────────────
+
+  Background: Deep navy (#0B1D35) with a subtle geometric grid overlay
+  (CSS repeating-linear-gradient lines at very low opacity ~0.04).
+  A large radial gradient glow of gold (rgba 196,158,83,0.07) in the
+  top-right corner.
+
+  Gold thin-line corner brackets drawn in CSS (top-left and bottom-right
+  of a centered container box — 60px wide, 60px tall, 2px thick).
+
+  Content (centered):
+  - Small label above heading: "Professional Concierge & Errand Service"
+    in gold, 11px, letter-spacing 4px, uppercase, DM Sans
+  - H1: "Life is busy." (line 1, white)
+         "We run it for you." (line 2, gold)
+    Both in Playfair Display, 64px desktop
+  - Thin gold horizontal divider line (200px wide, centered) with a
+    small diamond shape (◆) in the middle
+  - Subheading paragraph (white at 65% opacity):
+    "We shop, deliver, source fundis, and handle your personal, home
+    and document errands across Ngong, Kiserian, and surrounding areas."
+    Max-width 600px, centered, 18px, line-height 1.8
+  - Two CTA buttons side by side:
+      Primary: Gold background (#C49E53), navy text, rounded-full.
+               "WhatsApp Us Now" with WhatsApp icon. Opens wa.me link.
+               Hover: darkens to #A07C35, slight scale-up transform.
+      Secondary: Transparent, gold border, white text.
+               "View Our Services" — smooth scrolls to #services section.
+               Hover: fills with gold at 15% opacity.
+  - Below buttons: small location text in muted white:
+    "📍 Ngong · Kiserian · Kisamis · Kimuka · Matassia · Kibiko"
+    12px, letter-spacing 2px.
+
+  Animation: Hero content fades in and slides up on page load using
+  CSS keyframe animation (staggered delays per element).
+
+  Scroll indicator: A small animated bouncing chevron-down arrow in gold
+  at the bottom of the hero, encouraging scroll.
+
+── 3. TRUST BAR / STATS STRIP ─────────────────────────────────────────────
+
+  Background: Gold (#C49E53).
+  Full-width horizontal strip, 90px tall.
+
+  Four stats evenly spaced, in navy text (#0B1D35):
+    "6 Areas Served" | "M-Pesa Accepted" | "Mon–Sat 7am–7pm" | "Receipts Issued"
+
+  Each stat has a small Font Awesome icon above it in navy.
+  Between each stat: a thin 1px navy vertical divider line.
+  DM Sans, 14px label, 18px bold value.
+
+  On mobile: wraps to 2x2 grid.
+
+── 4. SERVICES SECTION ────────────────────────────────────────────────────
+
+  id="services"
+  Background: Off-white (#F7F5F0).
+
+  Section Header (centered):
+  - Gold label: "WHAT WE DO" in 11px, letter-spacing 4px
+  - H2: "Everything you need. Handled."
+  - Thin gold underline (80px) centered beneath it
+  - Subtext: "One reliable team for all your personal, home and
+    business errands."
+
+  6 Service Cards in a responsive CSS grid:
+  - Desktop: 3 columns | Tablet: 2 columns | Mobile: 1 column
+  - Gap: 24px
+
+  Each card design:
+  - White background, border-radius 12px
+  - Very light box-shadow on default
+  - On hover: gold left-border (4px solid #C49E53) slides in,
+    card lifts slightly (translateY -4px), shadow deepens
+  - AOS animation: fade-up with staggered delay (0ms, 100ms, 200ms...)
+
+  Card content:
+  - Icon box: navy square (50x50px, border-radius 10px) with Font
+    Awesome icon in gold — 22px
+  - Service title: 18px Playfair Display bold, navy
+  - Description: 14px DM Sans, muted gray (#6B7280), line-height 1.7
+  - 3 tag pills below: small rounded tags in very light gold background
+    with gold text (11px)
+
+  The 6 services and their Font Awesome icons:
+
+  1. Shopping & Delivery (fa-cart-shopping)
+     "Supermarket runs, market shopping, CBD & wholesale deliveries,
+     pharmacy pickups and farm produce — straight to your door."
+     Tags: Naivas · CBD · Marikiti
+
+  2. Home Services (fa-wrench)
+     "Vetted plumbers, electricians, painters and cleaners. We source
+     and vet — because your home deserves tradespeople you can trust."
+     Tags: Fundis · Electrical · Plumbing
+
+  3. Document Errands (fa-file-lines)
+     "Huduma Centre, KRA, NTSA, NHIF, banks and county offices handled
+     on your behalf. Skip the queue. We'll go for you."
+     Tags: Huduma · KRA · NTSA
+
+  4. Healthcare Support (fa-kit-medical)
+     "Medicine delivery, prescription pickups, lab result collections
+     and hospital appointment bookings — handled with care."
+     Tags: Pharmacy · Lab Results · Bookings
+
+  5. Courier & Logistics (fa-box)
+     "Same-day delivery, parcel pickup and dispatch, CBD-to-Ngong
+     runs and last-mile logistics for residents and businesses."
+     Tags: Same Day · Parcels · Business
+
+  6. Lifestyle & Personal (fa-leaf)
+     "Gift sourcing, school supplies, property scouting, special
+     occasion errands and so much more."
+     Tags: Gifts · Schools · Lifestyle
+
+── 5. HOW IT WORKS ────────────────────────────────────────────────────────
+
+  id="how-it-works"
+  Background: Navy (#0B1D35).
+  Text: White.
+
+  Section Header (centered, white):
+  - Gold label: "THE PROCESS"
+  - H2: "Simple. Fast. Done." (white + last word in gold)
+  - Gold divider line
+
+  4 Steps in a horizontal flex row (desktop) / vertical stack (mobile):
+  Between each step on desktop: a dashed gold arrow (→) connector.
+
+  Each step:
+  - Large step number in Playfair Display, 48px, gold, at low opacity
+    (0.3) as a background watermark behind the content
+  - Circle icon: gold border circle, 56x56px, Font Awesome icon inside
+  - Title: 17px bold DM Sans, white
+  - Description: 13px DM Sans, white at 60% opacity
+
+  Step 1: WhatsApp Us (fa-whatsapp)
+  "Send us a WhatsApp message describing your errand. We respond
+  within minutes."
+
+  Step 2: Get a Quote (fa-file-invoice)
+  "We give you a clear, upfront price. No hidden fees. M-Pesa
+  payment accepted."
+
+  Step 3: We Handle It (fa-person-running)
+  "Our agent handles your errand professionally and keeps you
+  updated throughout."
+
+  Step 4: Task Complete (fa-circle-check)
+  "Receive your M-Pesa receipt and a completion confirmation.
+  Simple as that."
+
+── 6. PRICING SECTION ─────────────────────────────────────────────────────
+
+  id="pricing"
+  Background: Light gray (#F4F4F4).
+
+  Section Header (centered):
+  - Gold label: "TRANSPARENT PRICING"
+  - H2: "Clear prices. No surprises."
+  - Subtext: "All errands are quoted upfront. M-Pesa accepted.
+    Receipt issued for every transaction."
+
+  5 pricing cards in a responsive grid (3 on desktop, 2 tablet, 1 mobile).
+  One card (Subscription) is highlighted/featured with a gold border.
+
+  Card structure:
+  - White background, border-radius 12px, padding 28px
+  - Category icon (Font Awesome) in gold at top
+  - Tier name: bold, navy, 16px
+  - Price range: 28px Playfair Display, navy
+  - Short description: 13px muted, below price
+  - Divider line
+  - 3 bullet points (checkmark in gold, text in navy, 13px)
+
+  Tier 1: Basic (fa-circle)
+  "KSh 200 – 400" | "Local errands within Ngong & Kiserian"
+  ✓ Market or pharmacy runs
+  ✓ Local drop-offs and pickups
+  ✓ Same-day availability
+
+  Tier 2: Standard (fa-star-half-stroke)
+  "KSh 500 – 800" | "CBD & inter-town tasks"
+  ✓ CBD shopping and delivery
+  ✓ Bank & document errands
+  ✓ Town-to-Ngong logistics
+
+  Tier 3: Premium (fa-star)
+  "KSh 1,000 – 2,500" | "Complex or time-intensive tasks"
+  ✓ Fundi sourcing & coordination
+  ✓ Hospital escort service
+  ✓ Multi-stop errands
+
+  Tier 4: Subscription ⭐ FEATURED (fa-crown)
+  "KSh 3,500 / month" | "For busy households & professionals"
+  ✓ 8 errands per month
+  ✓ Priority WhatsApp response
+  ✓ No per-errand booking fee
+  [Highlighted: gold border (2px), subtle gold background tint,
+   "Most Popular" badge in gold pill at top-right]
+
+  Tier 5: Corporate (fa-building)
+  "KSh 5,000+ / month" | "For small businesses & shops"
+  ✓ Dedicated agent partnership
+  ✓ Bank, delivery & logistics runs
+  ✓ Custom monthly plan
+
+── 7. AREAS WE SERVE ──────────────────────────────────────────────────────
+
+  id="areas"
+  Background: Navy (#0B1D35).
+
+  Section Header (centered, white):
+  - Gold label: "WHERE WE OPERATE"
+  - H2: "Proudly serving the Ngong corridor."
+  - Subtext in white at 60% opacity
+
+  6 Area Cards in a 3x2 grid (desktop), 2x3 (tablet), 1 col (mobile).
+  Each card:
+  - Semi-transparent white background (rgba 255,255,255,0.05)
+  - Gold 1px border
+  - Border-radius 10px
+  - Location pin icon (fa-location-dot) in gold, 20px
+  - Area name in white, 17px Playfair Display bold
+  - Short descriptor in white at 55% opacity, 13px
+
+  Areas:
+  1. Ngong Town — "Our home base and primary service hub"
+  2. Kiserian — "High-density residential coverage"
+  3. Kisamis — "Full errand and delivery service"
+  4. Kimuka — "Estate and household concierge"
+  5. Matassia — "Reliable delivery and home services"
+  6. Kibiko — "Complete errand coverage"
+
+  Below the grid: a centered note in gold italics:
+  "Don't see your area? WhatsApp us — we may still be able to help."
+  With a small gold arrow → linking to the WhatsApp CTA.
+
+── 8. WHY CHOOSE US ───────────────────────────────────────────────────────
+
+  Background: Off-white (#F7F5F0).
+
+  Section Header:
+  - Gold label: "WHY ERRANDSPRO"
+  - H2: "The difference is in how we operate."
+
+  4 Reason Blocks in a 2x2 grid.
+  Each block (no card border — editorial style):
+  - Large Font Awesome icon in a gold circle (60px), 24px icon
+  - Title: 18px Playfair Display bold, navy
+  - Description: 14px DM Sans, muted
+
+  1. Trusted & Vetted (fa-shield-halved)
+  "Every fundi and service provider we refer has been personally
+  vetted by our team. We don't recommend anyone we wouldn't use
+  ourselves."
+
+  2. Always Professional (fa-id-badge)
+  "Branded uniform, M-Pesa receipts, and clear communication on
+  every task. We operate like a real company — because we are one."
+
+  3. Upfront Pricing (fa-tag)
+  "No surprise charges. Every errand is quoted before we begin.
+  You know exactly what you're paying — always."
+
+  4. Community-First (fa-heart)
+  "We live and work in this community. We understand the real daily
+  challenges of Ngong and Kiserian residents — and we're here to help."
+
+── 9. TESTIMONIALS ────────────────────────────────────────────────────────
+
+  Background: White.
+
+  Section Header:
+  - Gold label: "CLIENT STORIES"
+  - H2: "Real people. Real results."
+
+  3 Testimonial Cards in a horizontal row (desktop) / stacked (mobile).
+  Each card:
+  - White background, thin border (1px #E5E7EB), border-radius 12px
+  - Large gold opening quotation mark (font-size 60px, Playfair Display,
+    gold, positioned absolutely at top-left of card)
+  - Quote text: 15px DM Sans italic, navy, line-height 1.8
+  - Bottom: Avatar circle (initials, gold background, navy text) +
+    name in bold navy + area in muted text
+
+  Testimonial 1:
+  "I leave home at 6am and get back after 8pm. I used to dread weekends
+  because of all the errands piling up. ErrandsPro sorted my groceries,
+  handled a Huduma errand and even found me a reliable electrician — all
+  in one week. Life-changing, honestly."
+  — James M. | Kimuka
+
+  Testimonial 2:
+  "As a salon owner, I can't close my business to run errands. ErrandsPro
+  does my bank runs, picks up my supplies and even helped me sort a
+  county permit. I have a dedicated contact who knows exactly what I need.
+  Worth every shilling."
+  — Grace W. | Kiserian
+
+  Testimonial 3:
+  "My father is elderly and lives alone in Ngong. ErrandsPro collects his
+  medication every month and even escorted him to hospital once. I'm in
+  Nairobi and I sleep better knowing someone reliable is looking after
+  his errands. Thank you."
+  — Peter K. | Ngong (son of client)
+
+── 10. CONTACT / CTA SECTION ─────────────────────────────────────────────
+
+  id="contact"
+  Background: Navy (#0B1D35) with gold corner bracket accents.
+
+  Centered content:
+
+  - Small label: "GET STARTED TODAY"
+  - H2: "Ready to take back your time?" (white, Playfair Display)
+  - Paragraph: "Your first errand is just one message away. Tell us what
+    you need and we'll handle the rest — professionally, reliably, and
+    at a price you know upfront."
+    (white at 65% opacity, max-width 520px, centered)
+
+  - Gold divider diamond
+
+  - Contact info block (centered, 3 items side by side on desktop):
+    📲 WhatsApp: [WhatsApp Icon] "Send Us a Message" (clickable link)
+    📍 Location: [Map Pin Icon] "Ngong, Kiserian & Surrounding Areas"
+    ⏰ Hours: [Clock Icon] "Mon–Sat | 7:00am – 7:00pm"
+    Each in white, 14px DM Sans
+
+  - Two buttons:
+    Primary: Gold "WhatsApp Us Now" button (fa-whatsapp icon)
+             Opens: https://wa.me/254700000000
+             (use placeholder — owner will update number)
+    Secondary: Transparent white border "Call Us" button
+               Opens: tel:+254700000000 (placeholder)
+
+  - Below buttons: small text in white at 40% opacity:
+    "M-Pesa accepted · Receipts issued · Responses within minutes"
+
+── 11. FOOTER ─────────────────────────────────────────────────────────────
+
+  Background: #040E1A (very deep navy, darker than primary).
+  Top: 1px gold border line.
+
+  Three-column layout (desktop) | stacked (mobile):
+
+  Column 1:
+  - "ErrandsPro" in Playfair Display gold 22px + "Ngong" white
+  - Tagline in white at 50% opacity, 13px italic
+  - Social icons row: Facebook, Instagram, TikTok (Font Awesome)
+    Each icon: 18px, white at 50% opacity. Hover: gold.
+
+  Column 2 — Quick Links:
+  - "Quick Links" heading in gold, 12px uppercase letter-spaced
+  - Links: Services | How It Works | Pricing | Areas | Contact
+    All 13px, white at 60% opacity. Hover: gold.
+
+  Column 3 — Contact:
+  - "Contact" heading in gold, 12px uppercase letter-spaced
+  - WhatsApp: [icon] wa.me link
+  - Email: [icon] placeholder email
+  - Hours: [icon] Mon–Sat 7am–7pm
+  - Areas: [icon] Ngong, Kiserian & surrounding
+
+  Bottom bar:
+  - Full-width thin gold top-border line
+  - Left: "© 2026 ErrandsPro Ngong. All rights reserved."
+  - Right: "Professional Concierge Services · Kajiado County, Kenya"
+  - Both in white at 30% opacity, 12px
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+FLOATING WHATSAPP BUTTON
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Fixed to bottom-right of the screen (position: fixed; bottom: 28px;
+right: 28px; z-index: 9999).
+
+Design:
+- Circular button (60x60px), background: #25D366 (WhatsApp green)
+- Font Awesome fa-whatsapp icon, white, 28px
+- Subtle pulsing ring animation (CSS keyframe: ring expands outward
+  in green, fading out — creates a "live" / attention-drawing effect)
+- Tooltip on hover: "Chat with us on WhatsApp" — appears to the left
+- Opens: https://wa.me/254700000000
+- box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ANIMATIONS & INTERACTIONS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+- Load AOS.js from CDN. Initialize: AOS.init({ duration: 700,
+  once: true, offset: 80 })
+- All section headers: data-aos="fade-up"
+- Service cards: data-aos="fade-up" data-aos-delay="0/100/200..."
+- Stats strip: data-aos="fade-in"
+- How it works steps: data-aos="fade-right" with staggered delay
+- Pricing cards: data-aos="zoom-in" with delay
+- Testimonials: data-aos="fade-up" with delay
+- Smooth scroll behavior: css { scroll-behavior: smooth }
+- Navbar scroll transition: JavaScript IntersectionObserver on hero
+  section — when hero leaves viewport, add class 'scrolled' to navbar
+  which applies solid background + shadow
+- Mobile menu: JavaScript toggle class on hamburger click, slide
+  animation on the menu panel
+- Counter animation: When the stats strip enters viewport, count up
+  the numbers using JavaScript requestAnimationFrame
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+MOBILE RESPONSIVENESS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Breakpoints:
+  Mobile:  max-width 640px
+  Tablet:  max-width 1024px
+  Desktop: 1024px+
+
+Mobile rules:
+- Nav collapses to hamburger menu
+- Hero H1 reduces to 36px, subtext to 16px
+- CTA buttons stack vertically, full-width
+- Services grid: 1 column
+- Pricing grid: 1 column
+- How It Works: stacked vertically, no arrows
+- Areas grid: 2 columns
+- Testimonials: single column with horizontal scroll (snap)
+- Floating WhatsApp button: slightly smaller (52px)
+- Footer: single column stack, centered
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SEO & META
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+In the <head>, include:
+  <title>ErrandsPro Ngong | Professional Concierge & Errand Service</title>
+  <meta name="description" content="ErrandsPro Ngong is a professional
+  concierge and errand service covering Ngong, Kiserian, Kisamis, Kimuka,
+  Matassia and Kibiko. We handle shopping, delivery, fundis, document
+  errands, healthcare pickups and more. One call. Consider it done.">
+  <meta name="keywords" content="errand service Ngong, concierge Kiserian,
+  shopping delivery Ngong, fundi Ngong, errand service Kenya, delivery
+  Kiserian, Huduma errand, document errand Nairobi, ErrandsPro Ngong">
+  <meta property="og:title" content="ErrandsPro Ngong — Your Time Is
+  Valuable. We Handle The Rest.">
+  <meta property="og:description" content="Professional errand and
+  concierge service in Ngong, Kiserian and surrounding areas. M-Pesa
+  accepted. Receipts issued. WhatsApp us today.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://errandsprongong.co.ke">
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CDN LINKS TO USE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Google Fonts:
+  https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap
+
+Font Awesome 6:
+  https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css
+
+AOS (Animate on Scroll):
+  CSS: https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css
+  JS:  https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+FINAL QUALITY CHECKLIST
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Before completing, verify:
+  ✓ All sections visible and complete on both desktop and mobile
+  ✓ Navbar scroll transition works correctly
+  ✓ All CTA buttons link correctly (WhatsApp, tel, scroll anchors)
+  ✓ Mobile hamburger menu opens and closes properly
+  ✓ AOS animations trigger on scroll (not on load)
+  ✓ Floating WhatsApp button visible on all sections
+  ✓ Pulsing animation on WhatsApp button is smooth
+  ✓ All 6 service cards render correctly in grid
+  ✓ Pricing featured card (Subscription) is clearly highlighted
+  ✓ Testimonials render clearly with quotation marks
+  ✓ Footer is complete with all three columns
+  ✓ No horizontal scroll on mobile
+  ✓ All text is readable — minimum 13px on mobile
+  ✓ Gold color (#C49E53) is consistent throughout
+  ✓ Page loads fast — no unused CSS or JS blocking render
+
+════════════════════════════════════════════════════════════════════════════
+  END OF REPLIT PROMPT
+  This prompt is ready to paste directly into Replit AI Agent.
+  The site will be fully built as a single index.html file.
+════════════════════════════════════════════════════════════════════════════
