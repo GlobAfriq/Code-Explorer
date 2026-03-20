@@ -17,38 +17,38 @@ function Navbar() {
 
   return (
     <>
-      <nav className={`navbar${scrolled ? " scrolled" : ""}`}>
-        <a href="#hero" className="navbar-brand" onClick={closeMenu}>
+      <nav className={`navbar${scrolled ? " scrolled" : ""}`} aria-label="Main navigation">
+        <a href="#hero" className="navbar-brand" onClick={closeMenu} aria-label="ErrandsPro Ngong — Home">
           <span className="brand-errandspro">ErrandsPro</span>
-          <span className="brand-dot">·</span>
+          <span className="brand-dot" aria-hidden="true">·</span>
           <span className="brand-ngong">Ngong</span>
         </a>
-        <ul className="nav-links">
+        <ul className="nav-links" role="list">
           <li><a href="#services">Services</a></li>
           <li><a href="#how-it-works">How It Works</a></li>
           <li><a href="#pricing">Pricing</a></li>
           <li><a href="#areas">Areas</a></li>
           <li><a href="#contact">Contact</a></li>
           <li>
-            <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="nav-cta">
-              <i className="fab fa-whatsapp"></i> WhatsApp Us
+            <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="nav-cta" aria-label="Contact us on WhatsApp">
+              <i className="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp Us
             </a>
           </li>
         </ul>
-        <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)} aria-label="Menu">
-          <i className={`fas fa-${menuOpen ? "times" : "bars"}`}></i>
+        <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? "Close menu" : "Open menu"} aria-expanded={menuOpen}>
+          <i className={`fas fa-${menuOpen ? "times" : "bars"}`} aria-hidden="true"></i>
         </button>
       </nav>
 
-      <div className={`mobile-menu-overlay${menuOpen ? " open" : ""}`} onClick={closeMenu} />
-      <div className={`mobile-menu${menuOpen ? " open" : ""}`}>
+      <div className={`mobile-menu-overlay${menuOpen ? " open" : ""}`} onClick={closeMenu} aria-hidden="true" />
+      <div className={`mobile-menu${menuOpen ? " open" : ""}`} role="dialog" aria-label="Mobile navigation" aria-modal="true">
         <a href="#services" onClick={closeMenu}>Services</a>
         <a href="#how-it-works" onClick={closeMenu}>How It Works</a>
         <a href="#pricing" onClick={closeMenu}>Pricing</a>
         <a href="#areas" onClick={closeMenu}>Areas</a>
         <a href="#contact" onClick={closeMenu}>Contact</a>
-        <a href={WA_LINK} target="_blank" rel="noopener noreferrer" onClick={closeMenu} style={{color: "var(--gold)"}}>
-          <i className="fab fa-whatsapp" style={{marginRight: "0.5rem"}}></i>WhatsApp Us
+        <a href={WA_LINK} target="_blank" rel="noopener noreferrer" onClick={closeMenu} style={{color: "var(--gold)"}} aria-label="Chat on WhatsApp">
+          <i className="fab fa-whatsapp" aria-hidden="true" style={{marginRight: "0.5rem"}}></i>WhatsApp Us
         </a>
       </div>
     </>
@@ -57,35 +57,37 @@ function Navbar() {
 
 function Hero() {
   return (
-    <section className="hero" id="hero">
-      <div className="corner-bracket tl" />
-      <div className="corner-bracket br" />
+    <header className="hero" id="hero" role="banner">
+      <div className="corner-bracket tl" aria-hidden="true" />
+      <div className="corner-bracket br" aria-hidden="true" />
       <div className="hero-container">
-        <span className="hero-label">Professional Concierge &amp; Errand Service</span>
+        <p className="hero-label">Professional Concierge &amp; Errand Service — Ngong, Kenya</p>
         <h1>
           Life is busy.<br />
           <span>We run it for you.</span>
         </h1>
-        <div className="hero-divider">
+        <div className="hero-divider" aria-hidden="true">
           <div className="hero-divider-line" />
           <span className="hero-divider-diamond">◆</span>
           <div className="hero-divider-line" />
         </div>
         <p className="hero-sub">
-          We shop, deliver, source fundis, and handle your personal, home and document errands across Ngong, Kiserian, and surrounding areas.
+          We shop, deliver, source fundis, and handle your personal, home and document errands across Ngong, Kiserian, and surrounding areas — so you don't have to.
         </p>
         <div className="hero-buttons">
-          <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="btn-gold">
-            <i className="fab fa-whatsapp"></i> WhatsApp Us Now
+          <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="btn-gold" aria-label="Contact ErrandsPro Ngong on WhatsApp">
+            <i className="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp Us Now
           </a>
-          <a href="#services" className="btn-outline">View Our Services</a>
+          <a href="#services" className="btn-outline" aria-label="View our errand services">View Our Services</a>
         </div>
-        <p className="hero-location">📍 Ngong · Kiserian · Kisamis · Kimuka · Matassia · Kibiko</p>
+        <p className="hero-location">
+          <span aria-label="Service areas">📍 Ngong · Kiserian · Kisamis · Kimuka · Matassia · Kibiko</span>
+        </p>
       </div>
-      <a href="#trust-bar" className="scroll-indicator" aria-label="Scroll down">
-        <i className="fas fa-chevron-down"></i>
+      <a href="#trust-bar" className="scroll-indicator" aria-label="Scroll to learn more">
+        <i className="fas fa-chevron-down" aria-hidden="true"></i>
       </a>
-    </section>
+    </header>
   );
 }
 
@@ -167,25 +169,26 @@ function Services() {
         <p className="section-sub" data-aos="fade-up" data-aos-delay="150">
           One reliable team for all your personal, home and business errands.
         </p>
-        <div className="services-grid">
+        <div className="services-grid" role="list">
           {services.map((s) => (
-            <div
+            <article
               className="service-card"
               key={s.title}
+              role="listitem"
               data-aos="fade-up"
               data-aos-delay={s.delay}
             >
-              <div className="service-icon-box">
+              <div className="service-icon-box" aria-hidden="true">
                 <i className={`fas ${s.icon}`}></i>
               </div>
               <h3 className="service-title">{s.title}</h3>
               <p className="service-desc">{s.desc}</p>
-              <div className="service-tags">
+              <div className="service-tags" aria-label={`Tags: ${s.tags.join(", ")}`}>
                 {s.tags.map((t) => (
                   <span className="tag" key={t}>{t}</span>
                 ))}
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </div>
@@ -479,6 +482,74 @@ function Testimonials() {
   );
 }
 
+function FAQ() {
+  const [openIdx, setOpenIdx] = useState<number | null>(null);
+  const faqs = [
+    {
+      q: "What areas does ErrandsPro Ngong serve?",
+      a: "We serve Ngong Town, Kiserian, Kisamis, Kimuka, Matassia and Kibiko. WhatsApp us if your area isn't listed — we may still be able to help.",
+    },
+    {
+      q: "How much does an errand cost?",
+      a: "Basic local errands start from KSh 200–400. Standard CBD tasks cost KSh 500–800. Premium complex errands range from KSh 1,000–2,500. Monthly subscription plans start from KSh 3,500. All prices are quoted upfront with no hidden fees.",
+    },
+    {
+      q: "How do I place an errand request?",
+      a: "Simply send us a WhatsApp message describing your errand. We respond within minutes with an upfront quote. Once you approve, we handle everything.",
+    },
+    {
+      q: "What payment methods do you accept?",
+      a: "We accept M-Pesa and cash. An official receipt is issued for every completed transaction.",
+    },
+    {
+      q: "What are your operating hours?",
+      a: "We operate Monday to Saturday, 7:00am to 7:00pm. WhatsApp us and we'll confirm availability for your errand.",
+    },
+    {
+      q: "Do you handle document errands like KRA, NTSA and Huduma Centre?",
+      a: "Yes. We handle government office errands including Huduma Centre, KRA, NTSA, NHIF, banks and county offices on your behalf so you can skip the queue.",
+    },
+  ];
+
+  return (
+    <section className="section" id="faq" aria-label="Frequently Asked Questions" style={{ background: "#fff" }}>
+      <div className="section-inner" style={{ maxWidth: 760 }}>
+        <span className="section-label" data-aos="fade-up">FAQ</span>
+        <h2 className="section-title" style={{ color: "var(--navy)" }} data-aos="fade-up" data-aos-delay="50">
+          Common questions, answered.
+        </h2>
+        <div className="section-underline" data-aos="fade-up" data-aos-delay="100" />
+        <dl className="faq-list" data-aos="fade-up" data-aos-delay="150">
+          {faqs.map((faq, i) => (
+            <div className={`faq-item${openIdx === i ? " open" : ""}`} key={i}>
+              <dt>
+                <button
+                  className="faq-question"
+                  onClick={() => setOpenIdx(openIdx === i ? null : i)}
+                  aria-expanded={openIdx === i}
+                  aria-controls={`faq-answer-${i}`}
+                  id={`faq-question-${i}`}
+                >
+                  <span>{faq.q}</span>
+                  <i className={`fas fa-chevron-${openIdx === i ? "up" : "down"}`} aria-hidden="true"></i>
+                </button>
+              </dt>
+              <dd
+                id={`faq-answer-${i}`}
+                role="region"
+                aria-labelledby={`faq-question-${i}`}
+                className="faq-answer"
+              >
+                <p>{faq.a}</p>
+              </dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+    </section>
+  );
+}
+
 function Contact() {
   return (
     <section className="contact-section" id="contact">
@@ -599,8 +670,9 @@ export default function App() {
 
   return (
     <>
+      <a href="#main-content" className="skip-nav">Skip to main content</a>
       <Navbar />
-      <main>
+      <main id="main-content">
         <Hero />
         <TrustBar />
         <Services />
@@ -609,6 +681,7 @@ export default function App() {
         <Areas />
         <WhyUs />
         <Testimonials />
+        <FAQ />
         <Contact />
         <Footer />
       </main>

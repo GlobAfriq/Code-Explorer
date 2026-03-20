@@ -1,5 +1,29 @@
 # Workspace
 
+## ErrandsPro Ngong
+
+A production-quality one-page website for ErrandsPro Ngong — a professional concierge and errand service based in Ngong, Kenya.
+
+**Stack:** React + Vite (frontend-only, no backend required)
+**Artifact:** `artifacts/errandspro-ngong` at preview path `/`
+**Sections:** Hero, Trust Bar, Services (6), How It Works (4 steps), Pricing (5 tiers), Areas (6), Why Us, Testimonials, FAQ (accordion), Contact, Footer
+**External CDNs:** Google Fonts (Playfair Display + DM Sans), Font Awesome 6, AOS.js
+
+**SEO Features:**
+- Comprehensive meta tags (description, keywords, geo, author, robots)
+- Open Graph tags for Facebook/social sharing
+- Twitter Card meta tags
+- JSON-LD structured data: `LocalBusiness`, `FAQPage`, `BreadcrumbList`
+- Semantic HTML5 landmarks (`<header>`, `<main>`, `<nav>`, `<section>`, `<article>`, `<footer>`, `<dl>/<dt>/<dd>` for FAQ)
+- Proper ARIA attributes and roles throughout
+- Skip navigation link for screen readers
+- Keyword-rich hero label and descriptions
+- Geographic meta tags with Ngong coordinates
+
+---
+
+
+
 ## Overview
 
 pnpm workspace monorepo using TypeScript. Each package manages its own dependencies.
